@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>方案介紹｜Hello Photobooth</title>
+  <meta name="description" content="Hello Photobooth 三種方案介紹：入門款 $18,000、熱門款 $24,000、體驗爆點款 $29,800，滿足不同活動需求。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* ===== PLANS PAGE ===== */
+    .plans-wrap { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+
+    .plan-section {
+      margin-bottom: 4rem;
+      background: #fff;
+      border: 0.5px solid rgba(42,37,32,0.1);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    /* Plan header band */
+    .plan-band {
+      padding: 2rem 2rem 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .plan-band-a { background: linear-gradient(135deg, #EAF3DE 0%, #F5FAF0 100%); border-bottom: 0.5px solid #C8DFAC; }
+    .plan-band-b { background: linear-gradient(135deg, #E6F1FB 0%, #F0F6FD 100%); border-bottom: 0.5px solid #A8CEEF; }
+    .plan-band-c { background: linear-gradient(135deg, #EEEDFE 0%, #F5F4FF 100%); border-bottom: 0.5px solid #C4C0EF; }
+
+    .plan-label {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 999px;
+      width: fit-content;
+      margin-bottom: 6px;
+    }
+    .label-a { background: #1e3a0d; color: #7EC84A; }
+    .label-b { background: #0a2a52; color: #6AABF7; }
+    .label-c { background: #221c5c; color: #AFA9EC; }
+
+    .plan-band-info { flex: 1; min-width: 200px; }
+    .plan-band-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: #1C1815;
+      margin-bottom: 2px;
+    }
+    .plan-band-sub { font-size: 14px; color: #7A7068; margin-bottom: 0; }
+    .plan-band-price {
+      font-size: 40px;
+      font-weight: 300;
+      color: #1C1815;
+      letter-spacing: -1px;
+      align-self: center;
+    }
+    .plan-band-price small { font-size: 14px; color: #7A7068; font-weight: 400; }
+
+    /* Plan body */
+    .plan-body { padding: 2rem; }
+    .plan-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+
+    /* Features list */
+    .plan-features-title {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: #7A7068;
+      margin-bottom: 12px;
+    }
+    .plan-feat-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.5rem; }
+    .plan-feat-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #2A2520;
+      line-height: 1.5;
+    }
+    .feat-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      flex-shrink: 0; margin-top: 6px;
+    }
+    .dot-a { background: #3B6D11; }
+    .dot-b { background: #185FA5; }
+    .dot-c { background: #534AB7; }
+    .feat-hi-a { color: #3B6D11; font-weight: 500; }
+    .feat-hi-b { color: #185FA5; font-weight: 500; }
+    .feat-hi-c { color: #534AB7; font-weight: 500; }
+
+    /* Merch row */
+    .plan-merch-title {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: #7A7068;
+      margin-bottom: 8px;
+    }
+    .plan-merch-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
+    .plan-merch-pills span {
+      font-size: 12px;
+      background: #FAF7F2;
+      color: #7A7068;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 0.5px solid rgba(42,37,32,0.1);
+    }
+
+    /* Target */
+    .plan-target {
+      font-size: 13px;
+      color: #7A7068;
+      padding: 10px 14px;
+      background: #FAF7F2;
+      border-radius: 10px;
+      border-left: 3px solid #C9A96E;
+    }
+    .plan-target strong { color: #C9A96E; }
+
+    /* Photos grid */
+    .plan-photos-title {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: #7A7068;
+      margin-bottom: 12px;
+    }
+    .plan-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .plan-photo {
+      aspect-ratio: 4/3;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #F0EDE8;
+      position: relative;
+    }
+    .plan-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.3s;
+    }
+    .plan-photo:hover img { transform: scale(1.04); }
+
+    /* Photo placeholder */
+    .photo-placeholder-box {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 6px; color: #B8AE9E;
+      font-size: 12px; text-align: center; padding: 1rem;
+    }
+    .photo-placeholder-box svg { width: 28px; height: 28px; opacity: 0.4; }
+    .photo-placeholder-box span { font-size: 11px; color: #C9A96E; }
+
+    /* CTA in plan */
+    .plan-cta { margin-top: 1.5rem; }
+    .plan-cta a {
+      display: inline-block;
+      background: #C9A96E; color: #1C1815;
+      font-size: 14px; font-weight: 500;
+      padding: 12px 28px; border-radius: 999px;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .plan-cta a:hover { background: #E8C89A; }
+
+    /* Popular badge */
+    .popular-band {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 8px;
+    }
+    .pop-tag {
+      font-size: 11px; font-weight: 500;
+      background: #C9A96E; color: #1C1815;
+      padding: 3px 12px; border-radius: 999px;
+    }
+
+    @media (max-width: 768px) {
+      .plans-wrap { padding: 1.5rem 1.25rem 0; }
+      .plan-cols { grid-template-columns: 1fr; gap: 1.5rem; }
+      .plan-band { padding: 1.5rem; gap: 1rem; }
+      .plan-band-price { font-size: 32px; }
+      .plan-band-name { font-size: 22px; }
+      .plan-body { padding: 1.5rem; }
+      .plan-photos { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="sub-nav">
+    <div class="sub-nav-inner">
+      <a href="index.html" class="back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        返回首頁
+      </a>
+      <div class="sub-nav-title">方案介紹</div>
+      <a href="index.html#contact" class="sub-nav-cta">立即預約</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="section-tag">PRICING PLANS</div>
+    <h1>三種方案介紹</h1>
+    <p>三種方案・三種體驗・滿足不同需求與預算</p>
+  </div>
+
+  <div class="plans-wrap">
+
+    <!-- ===== 方案 A ===== -->
+    <div class="plan-section">
+      <div class="plan-band plan-band-a">
+        <div class="plan-band-info">
+          <div class="plan-label label-a">方案 A</div>
+          <div class="plan-band-name">入門款</div>
+          <div class="plan-band-sub">快速拍照版・簡單快速留紀念</div>
+        </div>
+        <div class="plan-band-price">$18,000 <small>/ 場</small></div>
+      </div>
+      <div class="plan-body">
+        <div class="plan-cols">
+          <div>
+            <div class="plan-features-title">INCLUDES</div>
+            <ul class="plan-feat-list">
+              <li><span class="feat-dot dot-a"></span>拍貼機台</li>
+              <li><span class="feat-dot dot-a"></span>1 位工作人員協助</li>
+              <li><span class="feat-dot dot-a"></span>現場快速出圖（約 10 秒/張）</li>
+              <li><span class="feat-dot dot-a"></span><span class="feat-hi-a">電子檔案（事後提供）</span><br><small style="color:#7A7068;padding-left:16px;">活動結束後 3–7 工作天下載</small></li>
+            </ul>
+            <div class="plan-merch-title">周邊</div>
+            <div class="plan-merch-pills"><span>無實體周邊</span></div>
+            <div class="plan-target">
+              <strong>適合</strong> 預算有限 / 只要拍照紀錄<br>
+              純拍照紀錄型，簡單快速，也能事後取得電子檔案留存回憶。
+            </div>
+            <div class="plan-cta">
+              <a href="index.html#contact">選擇方案 A・立即詢問</a>
+            </div>
+          </div>
+          <div>
+            <div class="plan-photos-title">活動實景</div>
+            <div class="plan-photos">
+              <!-- 換成真實照片：把下面的 div.photo-placeholder-box 整個刪掉，改成 <img src="photos/plan-a-1.jpg" alt="方案A現場"> -->
+              <div class="plan-photo">
+                <div class="photo-placeholder-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  上傳後替換<br><span>photos/plan-a-1.jpg</span>
+                </div>
+              </div>
+              <div class="plan-photo">
+                <div class="photo-placeholder-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  上傳後替換<br><span>photos/plan-a-2.jpg</span>
+                </div>
+              </div>
+              <div class="plan-photo">
+                <div class="photo-placeholder-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  上傳後替換<br><span>photos/plan-a-3.jpg</span>
+                </div>
+              </div>
+              <div class="plan-photo">
+                <div class="photo-placeholder-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  上傳後替換<br><span>photos/plan-a-4.jpg</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 方案 B ===== -->
+    <div class="plan-section">
+      <div class="plan-band plan-band-b">
+        <div class="plan-band-info">
+          <div class="popular-band">
+            <div class="plan-label label-b">方案 B</div>
+            <div class="pop-tag">最多人選</div>
+          </div>
+          <div class="plan-band-name">熱門款</div>
+          <div class="plan-band-sub">活動氣氛升級版・互動感全面提升</div>
+        </div>
+        <div class="plan-band-price">$24,000 <small>/ 場</small></div>
+      </div>
+      <div class="plan-body">
+        <div class="plan-cols">
+          <div>
+            <div class="plan-features-title">INCLUDES</div>
+            <ul class="plan-feat-list">
+              <li><span class="feat-dot dot-b"></span>拍貼機台</li>
+              <li><span class="feat-dot dot-b"></span>2 位工作人員（不卡關、不排隊）</li>
+              <li><span class="feat-dot dot-b"></span>現場列印</li>
+              <li><span class="feat-dot dot-b"></span><span class="feat-hi-b">現場掃描拿電子檔</span>（活動現場即可取得）</li>
+              <li><span class="feat-dot dot-b"></span><span class="feat-hi-b">動態 GIF 電子照片</span>（超好分享）</li>
+            </ul>
+            <div class="plan-merch-title">周邊（超值組合）</div>
+            <div class="plan-merch-pills">
+              <span>鑰匙圈 × 20 個</span>
+              <span>冰箱貼 × 30 個</span>
+              <span>紀念相本 × 1 本</span>
+            </div>
+            <div class="plan-target">
+              <strong>適合</strong> 婚禮 / 品牌活動 / 想要有記憶點<br>
+              現場就能拿到電子檔，立即分享超方便！互動感升級，讓活動更有記憶點。
+            </div>
+            <div class="plan-cta">
+              <a href="index.html#contact">選擇方案 B・立即詢問</a>
+            </div>
+          </div>
+          <div>
+            <div class="plan-photos-title">活動實景</div>
+            <div class="plan-photos">
+              <div class="plan-photo">
+                <img src="photos/gallery1.jpg" alt="方案B現場" loading="lazy">
+              </div>
+              <div class="plan-photo">
+                <img src="photos/gallery5.jpg" alt="方案B現場" loading="lazy">
+              </div>
+              <div class="plan-photo">
+                <img src="photos/gallery3.jpg" alt="方案B現場" loading="lazy">
+              </div>
+              <div class="plan-photo">
+                <img src="photos/gallery4.jpg" alt="方案B現場" loading="lazy">
+              </div>
+              <!-- 換成方案B專屬照片：photos/plan-b-1.jpg ~ plan-b-4.jpg -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 方案 C ===== -->
+    <div class="plan-section" style="margin-bottom: 0;">
+      <div class="plan-band plan-band-c">
+        <div class="plan-band-info">
+          <div class="plan-label label-c">方案 C</div>
+          <div class="plan-band-name">體驗爆點款</div>
+          <div class="plan-band-sub">完整互動體驗版・讓感動延續一輩子</div>
+        </div>
+        <div class="plan-band-price">$29,800 <small>/ 場</small></div>
+      </div>
+      <div class="plan-body">
+        <div class="plan-cols">
+          <div>
+            <div class="plan-features-title">INCLUDES</div>
+            <ul class="plan-feat-list">
+              <li><span class="feat-dot dot-c"></span>包含方案 B 全部內容</li>
+              <li><span class="feat-dot dot-c"></span><span class="feat-hi-c">婚禮答錄機</span></li>
+              <li><span class="feat-dot dot-c"></span>可錄語音祝福（超有情緒價值）</li>
+              <li><span class="feat-dot dot-c"></span>後續可剪成珍貴紀念影片</li>
+              <li><span class="feat-dot dot-c"></span>完整互動體驗，回憶更完整</li>
+            </ul>
+            <div class="plan-merch-title">周邊（升級加倍）</div>
+            <div class="plan-merch-pills">
+              <span>鑰匙圈 × 40 個</span>
+              <span>冰箱貼 × 60 個</span>
+              <span>紀念相本 × 1 本</span>
+            </div>
+            <div class="plan-target">
+              <strong>適合</strong> 婚禮 / 求婚 / 高質感活動<br>
+              不只是拍照，更把大家的回憶都留下來，語音祝福讓感動延續一輩子！
+            </div>
+            <div class="plan-cta">
+              <a href="index.html#contact">選擇方案 C・立即詢問</a>
+            </div>
+          </div>
+          <div>
+            <div class="plan-photos-title">活動實景</div>
+            <div class="plan-photos">
+              <div class="plan-photo">
+                <img src="photos/gallery2.jpg" alt="方案C現場" loading="lazy">
+              </div>
+              <div class="plan-photo">
+                <img src="photos/gallery6.jpg" alt="方案C現場" loading="lazy">
+              </div>
+              <div class="plan-photo">
+                <div class="photo-placeholder-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  上傳後替換<br><span>photos/plan-c-3.jpg</span>
+                </div>
+              </div>
+              <div class="plan-photo">
+                <div class="photo-placeholder-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  上傳後替換<br><span>photos/plan-c-4.jpg</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cta-strip" style="margin-top: 3rem;">
+    <h2>還在猶豫哪個方案？</h2>
+    <p>歡迎直接聯絡我們，依活動規模與需求為您推薦最適合的方案</p>
+    <a href="index.html#contact">聯絡我們・立即諮詢</a>
+  </div>
+
+</body>
+</html>
