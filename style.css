@@ -1137,3 +1137,83 @@ footer p {
   .preview-cards { grid-template-columns: 1fr; gap: 12px; }
   #previews { padding: 4rem 0; }
 }
+
+/* ===== FRAMES CLEAN ===== */
+.frames-clean {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 2.5rem;
+  align-items: center;
+  background: #fff;
+  border: 0.5px solid var(--border);
+  border-radius: 20px;
+  padding: 2.5rem;
+}
+.frames-style-list { display: flex; flex-direction: column; gap: 14px; }
+.frame-style-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background: var(--cream);
+  border-radius: 12px;
+  border: 0.5px solid var(--border);
+}
+.frame-style-icon { font-size: 22px; flex-shrink: 0; width: 36px; text-align: center; }
+.frame-style-item strong { display: block; font-size: 14px; color: var(--dark); font-weight: 500; margin-bottom: 2px; }
+.frame-style-item span { font-size: 12px; color: var(--text-muted); }
+.frames-clean-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  border-left: 0.5px solid var(--border);
+  padding-left: 2rem;
+}
+.frames-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 72px;
+  font-weight: 300;
+  color: var(--dark);
+  line-height: 1;
+}
+.frames-num span { font-size: 40px; color: var(--gold); }
+.frames-num-label { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
+
+/* ===== PREVIEW TEXT CARDS ===== */
+.preview-cards-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.preview-text-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.preview-text-card:hover {
+  border-color: var(--gold);
+  transform: translateX(4px);
+  background: var(--gold-pale);
+}
+.ptc-icon { font-size: 28px; flex-shrink: 0; width: 48px; text-align: center; }
+.ptc-body { flex: 1; }
+.ptc-body .preview-tag { font-size: 10px; letter-spacing: 0.14em; color: var(--gold); margin-bottom: 4px; }
+.ptc-body h3 { font-family: 'Noto Serif TC', serif; font-size: 16px; font-weight: 600; color: var(--dark); margin-bottom: 3px; }
+.ptc-body p { font-size: 13px; color: var(--text-muted); }
+.ptc-arrow { font-size: 18px; color: var(--gold); flex-shrink: 0; transition: transform 0.2s; }
+.preview-text-card:hover .ptc-arrow { transform: translateX(4px); }
+
+@media (max-width: 768px) {
+  .frames-clean { grid-template-columns: 1fr; gap: 1.5rem; }
+  .frames-clean-right { border-left: none; border-top: 0.5px solid var(--border); padding-left: 0; padding-top: 1.5rem; }
+  .frames-num { font-size: 56px; }
+  .preview-text-card { padding: 1rem 1.25rem; }
+}
