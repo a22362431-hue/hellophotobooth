@@ -36,21 +36,21 @@ document.querySelectorAll('.plan-btn').forEach(btn => {
   });
 });
 
-// Contact form validation & submit
+// Contact form validation & submit to Formspree
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     let valid = true;
 
     const fields = [
-      { id: 'name', errId: 'name-err', check: v => v.trim().length > 0 },
-      { id: 'phone', errId: 'phone-err', check: v => /^[\d\s\-\+\(\)]{7,}$/.test(v.trim()) },
-      { id: 'email', errId: 'email-err', check: v => v === '' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
-      { id: 'date', errId: 'date-err', check: v => v.trim().length > 0 },
+      { id: 'name', check: v => v.trim().length > 0 },
+      { id: 'phone', check: v => /^[\d\s\-\+\(\)]{7,}$/.test(v.trim()) },
+      { id: 'email', check: v => v === '' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+      { id: 'date', check: v => v.trim().length > 0 },
     ];
 
-    fields.forEach(({ id, errId, check }) => {
+    fields.forEach(({ id, check }) => {
       const input = document.getElementById(id);
       const group = input ? input.closest('.form-group') : null;
       if (!input || !group) return;
@@ -68,16 +68,29 @@ if (form) {
     btn.disabled = true;
     btn.querySelector('.btn-text').textContent = '送出中...';
 
-    setTimeout(() => {
-      form.querySelectorAll('input:not([type=checkbox]), select, textarea').forEach(el => el.value = '');
-      form.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
-      document.getElementById('formSuccess').classList.add('show');
-      btn.disabled = false;
-      btn.querySelector('.btn-text').textContent = '送出詢問';
-    }, 900);
+    try {
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.querySelectorAll('input:not([type=checkbox]), select, textarea').forEach(el => el.value = '');
+        form.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
+        document.getElementById('formSuccess').classList.add('show');
+      } else {
+        alert('送出失敗，請直接透過 LINE 聯絡我們。');
+      }
+    } catch (err) {
+      alert('網路錯誤，請直接透過 LINE 聯絡我們。');
+    }
+
+    btn.disabled = false;
+    btn.querySelector('.btn-text').textContent = '送出詢問';
   });
 
-  // Clear errors on input
   form.querySelectorAll('input, select, textarea').forEach(el => {
     el.addEventListener('input', () => {
       el.closest('.form-group')?.classList.remove('has-error');
