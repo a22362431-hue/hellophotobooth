@@ -108,52 +108,87 @@
   </section>
 
 
-  <!-- THREE FEATURE BLOCKS -->
-  <section id="features">
-    <div class="container">
-      <div class="three-blocks">
+  <!-- FOUR FEATURE CARDS -->
+  <section id="features" style="padding:5rem 0; background:#1C1815;">
+    <div style="max-width:1100px; margin:0 auto; padding:0 2rem;">
+      <div style="text-align:center; margin-bottom:2.5rem;">
+        <div style="font-size:11px; letter-spacing:0.18em; color:#C9A96E; margin-bottom:8px;">EXPLORE</div>
+        <h2 style="font-family:'Noto Serif TC',serif; font-size:28px; font-weight:600; color:#fff;">深入了解我們的服務</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;">
 
-        <a href="gallery.html" class="three-block">
-          <div class="three-block-icon">📷</div>
-          <div class="three-block-tag">GALLERY</div>
-          <h2 class="three-block-title">作品集<br>活動實景</h2>
-          <p class="three-block-desc">婚禮・市集・宮廟・尾牙<br>分類瀏覽所有活動照片</p>
-          <div class="three-block-btn">查看作品集 →</div>
-        </a>
-
-        <div class="three-block no-link">
-          <div class="three-block-icon">🖼</div>
-          <div class="three-block-tag">FRAME STYLES</div>
-          <h2 class="three-block-title">框格風格<br>選擇</h2>
-          <p class="three-block-desc">20 款以上樣式，每款皆可客製文字、顏色與 Logo，完美融入活動主題</p>
-          <div class="frames-style-mini">
-            <span>💍 婚禮系列</span>
-            <span>🎂 生日派對</span>
-            <span>🏢 品牌活動</span>
-            <span>🏮 宮廟節慶</span>
-            <span>🎞 復古底片</span>
-            <span>✦ 簡約極簡</span>
+        <!-- 作品集 -->
+        <a href="gallery.html" style="text-decoration:none; display:block; border-radius:16px; overflow:hidden; background:#2A2520; border:0.5px solid rgba(255,255,255,0.1); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="aspect-ratio:4/3; overflow:hidden; position:relative;">
+            <img src="photos/gallery5.jpg" alt="作品集" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.55));"></div>
+            <div style="position:absolute; top:12px; left:12px; font-size:10px; letter-spacing:0.14em; color:#C9A96E; background:rgba(0,0,0,0.4); padding:4px 10px; border-radius:999px;">GALLERY</div>
           </div>
-          <a href="frames.html" class="three-block-btn-link">查看所有框格 →</a>
-        </div>
-
-        <a href="merch.html" class="three-block">
-          <div class="three-block-icon">🎁</div>
-          <div class="three-block-tag">MERCHANDISE</div>
-          <h2 class="three-block-title">周邊<br>產品</h2>
-          <p class="three-block-desc">鑰匙圈・冰箱貼・紀念相本<br>讓每位賓客帶走溫度感紀念</p>
-          <div class="three-block-btn">查看周邊產品 →</div>
+          <div style="padding:1.25rem;">
+            <h3 style="font-family:'Noto Serif TC',serif; font-size:18px; font-weight:600; color:#fff; margin-bottom:6px;">作品集・活動實景</h3>
+            <p style="font-size:13px; color:rgba(255,255,255,0.45); line-height:1.6; margin-bottom:14px;">婚禮・市集・宮廟・尾牙<br>分類瀏覽所有活動照片</p>
+            <div style="font-size:13px; font-weight:500; color:#C9A96E;">查看作品集 →</div>
+          </div>
         </a>
 
-        <a href="plans.html" class="three-block">
-          <div class="three-block-icon">📋</div>
-          <div class="three-block-tag">PLANS</div>
-          <h2 class="three-block-title">方案<br>介紹</h2>
-          <p class="three-block-desc">A / B / C 三種方案詳細說明<br>附現場照片・找到最適合的選擇</p>
-          <div class="three-block-btn">查看方案介紹 →</div>
+        <!-- 框格風格 -->
+        <a href="frames.html" style="text-decoration:none; display:block; border-radius:16px; overflow:hidden; background:#2A2520; border:0.5px solid rgba(255,255,255,0.1); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="aspect-ratio:4/3; overflow:hidden; position:relative;">
+            <img src="photos/frame1.png" alt="框格風格" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.55));"></div>
+            <div style="position:absolute; top:12px; left:12px; font-size:10px; letter-spacing:0.14em; color:#C9A96E; background:rgba(0,0,0,0.4); padding:4px 10px; border-radius:999px;">FRAMES</div>
+          </div>
+          <div style="padding:1.25rem;">
+            <h3 style="font-family:'Noto Serif TC',serif; font-size:18px; font-weight:600; color:#fff; margin-bottom:6px;">框格風格選擇</h3>
+            <p style="font-size:13px; color:rgba(255,255,255,0.45); line-height:1.6; margin-bottom:14px;">20 款以上樣式<br>全部客製・附電子檔</p>
+            <div style="font-size:13px; font-weight:500; color:#C9A96E;">查看所有框格 →</div>
+          </div>
+        </a>
+
+        <!-- 周邊產品 -->
+        <a href="merch.html" style="text-decoration:none; display:block; border-radius:16px; overflow:hidden; background:#2A2520; border:0.5px solid rgba(255,255,255,0.1); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="aspect-ratio:4/3; overflow:hidden; position:relative;">
+            <img src="photos/merch-prints.jpg" alt="周邊產品" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.55));"></div>
+            <div style="position:absolute; top:12px; left:12px; font-size:10px; letter-spacing:0.14em; color:#C9A96E; background:rgba(0,0,0,0.4); padding:4px 10px; border-radius:999px;">MERCH</div>
+          </div>
+          <div style="padding:1.25rem;">
+            <h3 style="font-family:'Noto Serif TC',serif; font-size:18px; font-weight:600; color:#fff; margin-bottom:6px;">周邊產品</h3>
+            <p style="font-size:13px; color:rgba(255,255,255,0.45); line-height:1.6; margin-bottom:14px;">鑰匙圈・冰箱貼・紀念相本<br>讓回憶延續到生活中</p>
+            <div style="font-size:13px; font-weight:500; color:#C9A96E;">查看周邊產品 →</div>
+          </div>
+        </a>
+
+        <!-- 方案介紹 -->
+        <a href="plans.html" style="text-decoration:none; display:block; border-radius:16px; overflow:hidden; background:#2A2520; border:0.5px solid rgba(255,255,255,0.1); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="aspect-ratio:4/3; overflow:hidden; position:relative;">
+            <img src="photos/gallery1.jpg" alt="方案介紹" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.55));"></div>
+            <div style="position:absolute; top:12px; left:12px; font-size:10px; letter-spacing:0.14em; color:#C9A96E; background:rgba(0,0,0,0.4); padding:4px 10px; border-radius:999px;">PLANS</div>
+          </div>
+          <div style="padding:1.25rem;">
+            <h3 style="font-family:'Noto Serif TC',serif; font-size:18px; font-weight:600; color:#fff; margin-bottom:6px;">方案介紹</h3>
+            <p style="font-size:13px; color:rgba(255,255,255,0.45); line-height:1.6; margin-bottom:14px;">A / B / C 三種方案說明<br>附現場照片・找到最適合的選擇</p>
+            <div style="font-size:13px; font-weight:500; color:#C9A96E;">查看方案介紹 →</div>
+          </div>
         </a>
 
       </div>
+
+      <!-- Mobile: 2x2 grid -->
+      <style>
+        @media (max-width: 768px) {
+          #features > div > div:last-child {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 10px !important;
+          }
+        }
+        @media (max-width: 400px) {
+          #features > div > div:last-child {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      </style>
     </div>
   </section>
 
