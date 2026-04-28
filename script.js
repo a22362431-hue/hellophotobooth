@@ -201,4 +201,9 @@ tabs.forEach(tab => {
     applyFrame(tab.dataset.frame);
   });
 });
-applyFrame('wedding');
+if (tabs.length) applyFrame('wedding');
+
+function selectFrame(el) {
+  document.querySelectorAll('.frame-real-card').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+}

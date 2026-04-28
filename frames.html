@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>框格風格｜Hello Photobooth</title>
+  <meta name="description" content="Hello Photobooth 提供 20 款以上框格風格，婚禮、宮廟、品牌活動皆有專屬設計，完全客製化。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+  <nav class="sub-nav">
+    <div class="sub-nav-inner">
+      <a href="index.html" class="back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        返回首頁
+      </a>
+      <div class="sub-nav-title">框格風格</div>
+      <a href="index.html#contact" class="sub-nav-cta">詢問客製</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="section-tag">FRAME STYLES</div>
+    <h1>框格風格選擇</h1>
+    <p>20 款以上樣式・每款皆可客製文字、顏色、Logo</p>
+  </div>
+
+  <div class="frames-page-grid">
+
+    <div class="frame-page-card" onclick="openLightbox(this)">
+      <img src="photos/frame1.png" alt="婚禮框格" loading="lazy">
+      <div class="frame-page-label">婚禮款</div>
+      <div class="frame-page-sub">典雅風格・可加名字日期</div>
+    </div>
+
+    <div class="frame-page-card" onclick="openLightbox(this)">
+      <img src="photos/frame2.png" alt="客製框格" loading="lazy">
+      <div class="frame-page-label">客製款</div>
+      <div class="frame-page-sub">完全依活動主題設計</div>
+    </div>
+
+    <div class="frame-page-card" onclick="openLightbox(this)">
+      <img src="photos/frame3.jpg" alt="20款樣式" loading="lazy">
+      <div class="frame-page-label">20 款樣式總覽</div>
+      <div class="frame-page-sub">G1～G20 任選</div>
+    </div>
+
+    <!-- 新增框格照片：複製以下格式，把 photos/YOUR_FRAME.jpg 換成你的檔名 -->
+    <!-- <div class="frame-page-card" onclick="openLightbox(this)">
+      <img src="photos/YOUR_FRAME.jpg" alt="框格名稱" loading="lazy">
+      <div class="frame-page-label">框格名稱</div>
+      <div class="frame-page-sub">說明文字</div>
+    </div> -->
+
+    <div class="frame-page-card" style="border:2px dashed var(--gold-light); display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:200px; cursor:default;">
+      <div style="font-size:32px; color:var(--gold); margin-bottom:8px;">+</div>
+      <div class="frame-page-label" style="text-align:center;">更多款式持續新增</div>
+      <div class="frame-page-sub" style="text-align:center;">聯絡我們了解全部樣式</div>
+    </div>
+
+  </div>
+
+  <div class="cta-strip">
+    <h2>找到喜歡的風格了嗎？</h2>
+    <p>每款框格皆可依活動主題完全客製，立即聯絡我們討論細節</p>
+    <a href="index.html#contact">聯絡我們・立即預約</a>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      if (!img) return;
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('open');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>
