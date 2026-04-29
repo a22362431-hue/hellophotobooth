@@ -8,6 +8,47 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="shared.css">
+  <style>
+    .merch-section { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem; }
+    .merch-section-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: 22px; font-weight: 600;
+      color: var(--dark); margin-bottom: 4px;
+    }
+    .merch-section-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 1.25rem; }
+    .merch-section-tag {
+      font-size: 11px; background: var(--gold-pale); color: var(--gold);
+      padding: 3px 10px; border-radius: 999px; width: fit-content;
+      border: 0.5px solid var(--gold-light); margin-bottom: 10px;
+    }
+    .merch-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 3rem;
+    }
+    .merch-photo-item {
+      aspect-ratio: 4/3;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #f0ede8;
+    }
+    .merch-photo-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.3s ease;
+    }
+    .merch-photo-item:hover img { transform: scale(1.04); }
+    .merch-divider {
+      border: none; border-top: 0.5px solid var(--border);
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 640px) {
+      .merch-photo-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .merch-section { padding: 1.5rem 1.25rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -28,56 +69,62 @@
     <p>讓每位賓客都帶走專屬紀念・溫度感十足的小禮物</p>
   </div>
 
-  <div class="merch-page-grid">
+  <div class="merch-section">
 
-    <div class="merch-page-card">
-      <img src="photos/merch-prints.jpg" alt="即拍即印成品" loading="lazy">
-      <div class="merch-page-info">
-        <div class="merch-page-tag">方案 B・C 含</div>
-        <h3>壓克力鑰匙圈</h3>
-        <p>採用高透明壓克力材質，印製現場拍攝的真實照片，耐用防水，日常使用不褪色。尺寸 5×7 cm，雙面印刷，附鑰匙環。</p>
-      </div>
+    <!-- 壓克力鑰匙圈 -->
+    <div class="merch-section-tag">方案 B・C 含</div>
+    <div class="merch-section-title">壓克力鑰匙圈</div>
+    <div class="merch-section-sub">高透明壓克力材質・印製現場真實照片・耐用防水・尺寸 5×7 cm・雙面印刷</div>
+    <div class="merch-photo-grid">
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/keychain1.jpg" alt="壓克力鑰匙圈" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/keychain2.jpg" alt="壓克力鑰匙圈" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/keychain3.jpg" alt="壓克力鑰匙圈" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/keychain4.jpg" alt="壓克力鑰匙圈" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/keychain5.jpg" alt="壓克力鑰匙圈" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/keychain6.jpg" alt="壓克力鑰匙圈" loading="lazy"></div>
     </div>
+    <hr class="merch-divider">
 
-    <div class="merch-page-card">
-      <img src="photos/merch-props.jpg" alt="客製化冰箱貼" loading="lazy">
-      <div class="merch-page-info">
-        <div class="merch-page-tag">方案 B・C 含</div>
-        <h3>客製化冰箱貼</h3>
-        <p>磁力強勁貼牢，表面光澤護膜防刮花，把活動的美好瞬間貼在家中最顯眼的地方。尺寸 9×6 cm，光澤護膜，強磁力。</p>
-      </div>
+    <!-- 客製化冰箱貼 -->
+    <div class="merch-section-tag">方案 B・C 含</div>
+    <div class="merch-section-title">客製化冰箱貼</div>
+    <div class="merch-section-sub">磁力強勁・表面光澤護膜防刮・尺寸 9×6 cm・強磁力</div>
+    <div class="merch-photo-grid">
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/fridge1.jpg" alt="客製化冰箱貼" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/fridge2.jpg" alt="客製化冰箱貼" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/fridge3.jpg" alt="客製化冰箱貼" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/fridge4.jpg" alt="客製化冰箱貼" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/fridge5.jpg" alt="客製化冰箱貼" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/fridge6.jpg" alt="客製化冰箱貼" loading="lazy"></div>
     </div>
+    <hr class="merch-divider">
 
-    <div class="merch-page-card">
-      <img src="photos/machine.jpg" alt="紀念互動相本" loading="lazy">
-      <div class="merch-page-info">
-        <div class="merch-page-tag">方案 B・C 含</div>
-        <h3>紀念互動相本</h3>
-        <p>精裝封面可客製印刷，內頁收錄當日所有賓客照片，是送給新人最珍貴的活動回憶。精裝硬殼，可客製封面，含全場照片。</p>
-      </div>
+    <!-- 紀念互動相本 -->
+    <div class="merch-section-tag">方案 B・C 含</div>
+    <div class="merch-section-title">紀念互動相本</div>
+    <div class="merch-section-sub">精裝封面可客製印刷・內頁收錄當日所有賓客照片・精裝硬殼</div>
+    <div class="merch-photo-grid">
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/album1.jpg" alt="紀念互動相本" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/album2.jpg" alt="紀念互動相本" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/album3.jpg" alt="紀念互動相本" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/album4.jpg" alt="紀念互動相本" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/album5.jpg" alt="紀念互動相本" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/album6.jpg" alt="紀念互動相本" loading="lazy"></div>
     </div>
+    <hr class="merch-divider">
 
-    <div class="merch-page-card" style="border:2px dashed var(--gold-light);">
-      <div style="aspect-ratio:4/3; background:var(--gold-pale); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px;">
-        <div style="font-size:40px; color:var(--gold);">+</div>
-        <div style="font-size:13px; color:var(--text-muted);">更多周邊加購</div>
-      </div>
-      <div class="merch-page-info">
-        <div class="merch-page-tag" style="background:#EAF3DE; color:#3B6D11; border-color:#C0DD97;">加購選項</div>
-        <h3>額外加購周邊</h3>
-        <p>方案以外還想多一點？鑰匙圈、冰箱貼均可單獨追加，彈性報價依量計算，歡迎詢問。</p>
-      </div>
+    <!-- 額外加購周邊 -->
+    <div class="merch-section-tag" style="background:#EAF3DE; color:#3B6D11; border-color:#C0DD97;">加購選項</div>
+    <div class="merch-section-title">額外加購周邊</div>
+    <div class="merch-section-sub">彈性加購・不設上限・報價依量計算・歡迎詢問</div>
+    <div class="merch-photo-grid">
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/addon1.jpg" alt="加購周邊" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/addon2.jpg" alt="加購周邊" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/addon3.jpg" alt="加購周邊" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/addon4.jpg" alt="加購周邊" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/addon5.jpg" alt="加購周邊" loading="lazy"></div>
+      <div class="merch-photo-item" onclick="openLightbox(this)"><img src="photos/addon6.jpg" alt="加購周邊" loading="lazy"></div>
     </div>
-
-    <!-- 新增周邊照片：複製以下格式 -->
-    <!-- <div class="merch-page-card">
-      <img src="photos/YOUR_MERCH.jpg" alt="周邊名稱" loading="lazy">
-      <div class="merch-page-info">
-        <div class="merch-page-tag">標籤</div>
-        <h3>周邊名稱</h3>
-        <p>說明文字</p>
-      </div>
-    </div> -->
 
   </div>
 
@@ -87,5 +134,23 @@
     <a href="index.html#contact">聯絡我們・詢問報價</a>
   </div>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      if (!img) return;
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('open');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
 </body>
 </html>
